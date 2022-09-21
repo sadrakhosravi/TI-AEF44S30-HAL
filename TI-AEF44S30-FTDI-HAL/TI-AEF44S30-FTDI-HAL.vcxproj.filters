@@ -15,8 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\TI-AEF44S30-FTDI-HAL.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\errorhandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ftdi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\afe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\errorhandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ftdi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\afe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

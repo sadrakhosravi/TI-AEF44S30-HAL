@@ -78,19 +78,19 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\inc;C:\dev\TI-AEF44S30-FTDI-HAL\lib\ftd2xx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\inc;C:\dev\TI-AEF44S30-FTDI-HAL\lib\ftd2xx;C:\dev\TI-AEF44S30-FTDI-HAL\TI-AEF44S30-FTDI-HAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\lib\LibFT4222\lib\i386\LibFT4222.lib;..\lib\ftd2xx\i386\ftd2xx.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\lib\i386;C:\dev\TI-AEF44S30-FTDI-HAL\lib\ftd2xx\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\lib\LibFT4222\lib\i386\LibFT4222.lib;..\lib\LibFT4222\dll\i386\LibFT4222.lib;..\lib\ftd2xx\i386\ftd2xx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\lib\i386;C:\dev\TI-AEF44S30-FTDI-HAL\lib\ftd2xx\i386;C:\dev\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\dll\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ProjectReference>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -98,10 +98,10 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\inc;C:\dev\TI-AEF44S30-FTDI-HAL\lib\ftd2xx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\TI-AEF44S30-FTDI-HAL\include;C:\dev\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\inc;C:\dev\TI-AEF44S30-FTDI-HAL\lib\ftd2xx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +135,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\inc;C:\dev\TI-AEF44S30-FTDI-HAL\TI-AEF44S30-FTDI-HAL\lib\ftd2xx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\TI-AEF44S30-FTDI-HAL\TI-AEF44S30-FTDI-HAL\include;C:\dev\TI-AEF44S30-FTDI-HAL\TI-AEF44S30-FTDI-HAL\lib\LibFT4222\inc;C:\dev\TI-AEF44S30-FTDI-HAL\TI-AEF44S30-FTDI-HAL\lib\ftd2xx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,7 +147,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\TI-AEF44S30-FTDI-HAL.cpp" />
+    <ClCompile Include="src\afe.cpp" />
+    <ClCompile Include="src\errorhandler.cpp" />
+    <ClCompile Include="src\ftdi.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\afe.h" />
+    <ClInclude Include="include\errorhandler.h" />
+    <ClInclude Include="include\ftdi.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
